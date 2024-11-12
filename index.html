@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Tugas</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.content-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.content-item {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.link-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 1em;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Daftar Tugas</h1>
+    <div class="content-list">
+      <div class="content-item">
+        <img src="/img/form.png" alt="Gambar 1" class="thumbnail" onclick="showPopup('/img/form.png', 'Tampilan form', 'berisi form yang dapat dilihat langsung resultnya')">
+        <button class="link-button" onclick="window.open('form.html', '_blank')">Tugas Form</button>
+      </div>
+      <div class="content-item">
+        <img src="/img/kabinet.png" alt="Gambar 1" class="thumbnail" onclick="showPopup('/img/kabinet.png', 'Tampilan utama', 'isi dari kabinet prabowo dengan onclick')">
+        <button class="link-button" onclick="window.open('kabinet.html', '_blank')">Tugas AJAX XML</button>
+      </div>
+      <div class="content-item">
+        <img src="/img/login.png" alt="Gambar 1" class="thumbnail" onclick="showPopup('/img/login.png', 'Tampilan utama', 'berisi login yang akan mengubah user dan tidak hilang ketika di refresh')">
+        <button class="link-button" onclick="window.open('https://khoirul-yardan.github.io/tugas-uas/', '_blank')">Tugas Login</button>
+      </div>
+      
+      
+    </div>
+  </div>
+<script>
+    function showPopup(imageSrc, title, description) {
+  Swal.fire({
+    title: title,
+    text: description,
+    imageUrl: imageSrc,
+    imageWidth: 400,
+    imageHeight: 300,
+    imageAlt: title,
+    confirmButtonText: 'Tutup',
+  });
+}
+
+</script>
+</body>
+</html>
